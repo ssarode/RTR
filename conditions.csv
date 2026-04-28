@@ -1,0 +1,4 @@
+condition,label,points_correct,points_incorrect,block_color
+neutral,No Reward,0,0,white
+reward,Reward,10,0,green
+punishment,Punishment,10,-10,red

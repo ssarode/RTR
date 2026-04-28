@@ -1,0 +1,3 @@
+faces,correct_key,stimulus_label,corr_ans
+stims/pacman.png,left,<,a
+stims/pacman_flip.png,right,>,l
