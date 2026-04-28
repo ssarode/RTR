@@ -302,6 +302,9 @@ function welcome_routineRoutineBegin(snapshot) {
     start_key_resp.keys = undefined;
     start_key_resp.rt = undefined;
     _start_key_resp_allKeys = [];
+    intro_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    
+    psychoJS.window.color = new util.Color('white');
     psychoJS.experiment.addData('welcome_routine.started', globalClock.getTime());
     welcome_routineMaxDuration = null
     // keep track of which components have finished
@@ -417,6 +420,7 @@ function welcome_routineRoutineEnd(snapshot) {
         }
     
     start_key_resp.stop();
+    psychoJS.window.color = new util.Color('black');
     // the Routine "welcome_routine" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -583,6 +587,11 @@ function block_intro_routineRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from code1
     var block_info_text, block_msg;
+    
+    block_info.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    feedback_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    
     cumulative_points = 200;
     block_start_score = cumulative_points;
     block_number += 1;
@@ -775,12 +784,19 @@ function trial_routineRoutineBegin(snapshot) {
     _key_resp_allKeys = [];
     // Run 'Begin Routine' code from code2
     var feedback_color, feedback_msg;
+    
+    block_info.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    feedback_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    
     feedback_msg = "";
     feedback_color = "white";
     feedback_text.setOpacity(0);
     jitter_time = Math.random() * (1.5 - 0.25) + 0.25;
     psychoJS.experiment.addData("jitter_time", jitter_time);
     
+    // JS version
+    psychoJS.experiment.addData('condition', condition);
     feedback_text.setColor(new util.Color(feedback_color));
     feedback_text.setText(feedback_msg);
     image.setImage(faces);
@@ -1057,6 +1073,11 @@ function block_feedback_routineRoutineBegin(snapshot) {
     
     var points_diff = cumulative_points - block_start_score;
     var msg_color, feedback_msg;
+    
+    block_info.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    feedback_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    
     if (points_diff > 0) { msg_color = "green"; }
     else if (points_diff < 0) { msg_color = "red"; }
     else { msg_color = "white"; }
@@ -1185,6 +1206,10 @@ function end_routineRoutineBegin(snapshot) {
     end_routineMaxDurationReached = false;
     // update component parameters for each repeat
     // Run 'Begin Routine' code from code3
+    block_info.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    feedback_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    
     final_msg = "Thank you for participating!\n\nThe experiment is now complete.\nPlease wait while we save your responses";
     key_resp1.keys = undefined;
     key_resp1.rt = undefined;
