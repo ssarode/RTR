@@ -135,7 +135,6 @@ var image;
 var block_feedback_routineClock;
 var text_show_res;
 var end_routineClock;
-var final_msg;
 var text;
 var key_resp1;
 var globalClock;
@@ -251,9 +250,7 @@ async function experimentInit() {
   
   // Initialize components for Routine "end_routine"
   end_routineClock = new util.Clock();
-  // Run 'Begin Experiment' code from code3
-  var final_msg;
-  final_msg = "Thank You";
+  
   
   text = new visual.TextStim({
     win: psychoJS.window,
@@ -1188,6 +1185,7 @@ function block_feedback_routineRoutineEnd(snapshot) {
 
 
 var end_routineMaxDurationReached;
+var final_msg;
 var _key_resp1_allKeys;
 var end_routineMaxDuration;
 var end_routineComponents;
@@ -1206,11 +1204,14 @@ function end_routineRoutineBegin(snapshot) {
     end_routineMaxDurationReached = false;
     // update component parameters for each repeat
     // Run 'Begin Routine' code from code3
+    var final_msg;
     block_info.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
     feedback_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
     text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
     
     final_msg = "Thank you for participating!\n\nThe experiment is now complete.\nPlease wait while we save your responses";
+    
+    text.setText(final_msg);
     key_resp1.keys = undefined;
     key_resp1.rt = undefined;
     _key_resp1_allKeys = [];
