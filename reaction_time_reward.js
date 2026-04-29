@@ -631,7 +631,6 @@ function block_intro_routineRoutineBegin(snapshot) {
 }
 
 
-var frameRemains;
 function block_intro_routineRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'block_intro_routine' ---
@@ -652,16 +651,6 @@ function block_intro_routineRoutineEachFrame() {
     
     // if block_info is active this frame...
     if (block_info.status === PsychoJS.Status.STARTED) {
-    }
-    
-    frameRemains = 0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
-    if (block_info.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      // keep track of stop time/frame for later
-      block_info.tStop = t;  // not accounting for scr refresh
-      block_info.frameNStop = frameN;  // exact frame index
-      // update status
-      block_info.status = PsychoJS.Status.FINISHED;
-      block_info.setAutoDraw(false);
     }
     
     
@@ -815,6 +804,7 @@ function trial_routineRoutineBegin(snapshot) {
 }
 
 
+var frameRemains;
 function trial_routineRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'trial_routine' ---
@@ -1281,7 +1271,7 @@ function end_routineRoutineEachFrame() {
     if (text.status === PsychoJS.Status.STARTED) {
     }
     
-    frameRemains = 0 + 1 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
+    frameRemains = 0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
     if (text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       // keep track of stop time/frame for later
       text.tStop = t;  // not accounting for scr refresh
