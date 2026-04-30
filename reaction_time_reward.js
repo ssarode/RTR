@@ -301,6 +301,8 @@ function welcome_routineRoutineBegin(snapshot) {
     _start_key_resp_allKeys = [];
     intro_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
     
+    intro_text.setText(intro_text.text);
+    
     psychoJS.window.color = new util.Color('white');
     psychoJS.experiment.addData('welcome_routine.started', globalClock.getTime());
     welcome_routineMaxDuration = null
@@ -605,13 +607,14 @@ function block_intro_routineRoutineBegin(snapshot) {
     }
     block_info_text = `${block_msg}
     
+    
     Current score: ${cumulative_points} pts
     
     Block ${block_number} of 18
     
     Press SPACE to begin.`
     ;
-    
+    block_info.setText(block_info_text);
     block_info.setText(block_info_text);
     key_resp_1.keys = undefined;
     key_resp_1.rt = undefined;
