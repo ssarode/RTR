@@ -154,7 +154,7 @@ async function experimentInit() {
   intro_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'intro_text',
-    text: "Hello!\n\nWelcome to our experiment. This is a simple task in which you will be presented with a face and you have to indicate whether the face is pointing in the right or the left direction as quickly and accurately as possible. \nIf the face is pointing in the right direction press 'L' on the keyboard. If the face is pointing in the left direction press 'A' on the keyboard.\n\nPress 'SPACE' to start the task! ",
+    text: "Hello!\n\nWelcome to our experiment.\nThis is a simple task in which you will be presented with a face and you have to indicate whether the face is pointing in the right or the left direction as quickly and accurately as possible.\nIf the face is pointing in the right direction press 'L' on the keyboard.\nIf the face is pointing in the left direction press 'A' on the keyboard.\n\nPress 'SPACE' to start the task! ",
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
@@ -300,6 +300,7 @@ function welcome_routineRoutineBegin(snapshot) {
     start_key_resp.rt = undefined;
     _start_key_resp_allKeys = [];
     intro_text.wrapWidth = psychoJS.window.size[0] / psychoJS.window.size[1] * 0.9;
+    
     
     intro_text.setText(intro_text.text);
     
